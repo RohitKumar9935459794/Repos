@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "545224516506",
+    "project_id": "fire-base-28f5e",
+    "storage_bucket": "fire-base-28f5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545224516506:android:b84fd2a15d9e6e049fd023",
+        "android_client_info": {
+          "package_name": "com.dgdgjfm.l.reposproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "545224516506-u72butp93ed2632v61rlj7jlc5b6emu0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCigS8YtGk_Ggeq1zbwQEaITRk1olC9gh4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "545224516506-u72butp93ed2632v61rlj7jlc5b6emu0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

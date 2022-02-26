@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".CompanyRegistration"
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="30dp"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/repos_logo" />
+
+    <TextView
+        android:id="@+id/companyName_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/company_name"
+        android:textSize="20sp"
+        android:layout_marginTop="40dp"/>
+
+    <EditText
+        android:id="@+id/companyName"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/official_emailAddress_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/official_email_address"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/official_emailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:layout_marginTop="30dp"/>
+
+    <TextView
+        android:id="@+id/industryType_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/industry_type"
+        android:textSize="20sp"
+        android:layout_marginTop="30dp"/>
+
+    <EditText
+        android:id="@+id/industryType"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:id="@+id/buttonSubmit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/submit"
+        android:layout_marginTop="30dp"/>
+</LinearLayout>
