@@ -15,16 +15,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/profile2"
-        android:textSize="40sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:gravity="center"/>
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="330dp"
+        android:layout_height="103dp"
+        android:layout_marginTop="10dp"
         app:srcCompat="@drawable/profile"
-        android:layout_marginTop="10dp"/>
+        android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/profileName"
@@ -33,7 +34,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         tools:ignore="SpeakableTextPresentCheck"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="5dp"/>
 
     <EditText
         android:id="@+id/profileEmail"
@@ -42,13 +43,13 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         tools:ignore="SpeakableTextPresentCheck"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="5dp"/>
 
     <EditText
         android:id="@+id/editTextPhone"
         android:layout_width="match_parent"
         android:layout_height="49dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:ems="10"
         android:inputType="phone"
         tools:ignore="SpeakableTextPresentCheck" />
@@ -58,7 +59,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/update_profile"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="5dp"/>
 
     <Button
         android:id="@+id/ReportAnIssue"
@@ -72,7 +73,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/log_out"
-        android:layout_marginTop="80dp"/>
+        android:layout_marginTop="40dp"/>
 
     <TextView
         android:id="@+id/supportText"

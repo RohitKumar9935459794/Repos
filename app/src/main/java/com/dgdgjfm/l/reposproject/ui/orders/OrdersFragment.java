@@ -9,12 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
+import com.dgdgjfm.l.reposproject.R;
 import com.dgdgjfm.l.reposproject.databinding.FragmentOrdersBinding;
-import com.google.android.material.navigation.NavigationBarMenuView;
+import com.google.android.material.navigation.NavigationView;
+
 
 public class OrdersFragment extends Fragment {
 
@@ -27,6 +32,8 @@ public class OrdersFragment extends Fragment {
 
         binding = FragmentOrdersBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+
         /*binding.currentOrders.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

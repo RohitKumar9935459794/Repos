@@ -10,7 +10,7 @@ public class AssetViewModel extends ViewModel {
 
     public AssetViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("To place order add an asset");
     }
 
     public LiveData<String> getText() {

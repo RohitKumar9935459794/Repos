@@ -10,7 +10,7 @@ public class OrdersViewModel extends ViewModel {
 
     public OrdersViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("To place order add an asset");
     }
 
     public LiveData<String> getText() {
