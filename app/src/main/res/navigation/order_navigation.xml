@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_navigation"
+    app:startDestination="@id/currentOrders">
+
+
+    <fragment
+        android:id="@+id/currentOrders"
+        android:name="com.dgdgjfm.l.reposproject.orders.currentOrders.CurrentOrdersFragment"
+        android:label="@string/title_dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_currentOrders_to_pastOrders"
+            app:destination="@id/pastOrders" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/pastOrders"
+        android:name="com.dgdgjfm.l.reposproject.orders.pastOrders.PastOrdersFragment"
+        android:label="@string/asset"
+        tools:layout="@layout/fragment_asset" >
+        <action
+            android:id="@+id/action_pastOrders_to_currentOrders"
+            app:destination="@id/currentOrders" />
+    </fragment>
+
+</navigation>

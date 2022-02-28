@@ -10,22 +10,24 @@
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/activity_company_resister.xml" value="0.1598731884057971" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/activity_company_resistration.xml" value="0.1598731884057971" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/activity_login.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/activity_sign_in.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/activity_sign_up.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/activity_submit.xml" value="0.17300724637681159" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/add_company_fragment.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/current_orders_fragment.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/current_orders_fragment.xml" value="0.1" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/fragment_asset.xml" value="0.1598731884057971" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/fragment_dashboard.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/fragment_history.xml" value="0.14583333333333334" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/fragment_home.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/fragment_notifications.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/fragment_orders.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/fragment_orders.xml" value="0.1" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/fragment_profile.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/past_orders_fragment.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/sign_up_fragment.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/layout/submit_fragment.xml" value="0.1793478260869565" />
         <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/DELL/AndroidStudioProjects/Reposproject/app/src/main/res/menu/orders_nav_menu.xml" value="0.20092592592592592" />
       </map>
     </option>
   </component>
