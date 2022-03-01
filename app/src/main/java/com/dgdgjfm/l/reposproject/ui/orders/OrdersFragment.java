@@ -1,5 +1,6 @@
 package com.dgdgjfm.l.reposproject.ui.orders;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,14 +12,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
-import com.dgdgjfm.l.reposproject.R;
+import com.dgdgjfm.l.reposproject.Add_AssetFragment;
 import com.dgdgjfm.l.reposproject.databinding.FragmentOrdersBinding;
-import com.google.android.material.navigation.NavigationView;
 
 
 public class OrdersFragment extends Fragment {
@@ -42,6 +38,13 @@ public class OrdersFragment extends Fragment {
 
             }
         });*/
+
+        binding.buttonAddAsset1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
         final TextView textView = binding.ordersText;
         ordersViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {

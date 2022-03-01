@@ -38,6 +38,7 @@ public class HistoryFragment extends Fragment {
                 textView.setText(s);
             }
         });
+
         return root;
     }
 
