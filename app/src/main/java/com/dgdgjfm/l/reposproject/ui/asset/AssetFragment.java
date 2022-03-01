@@ -27,6 +27,13 @@ public class AssetFragment extends Fragment {
         binding = FragmentAssetBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+        binding.buttonAddAsset1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         final TextView textView = binding.textHome;
         assetViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override

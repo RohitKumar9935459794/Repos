@@ -1,5 +1,6 @@
 package com.dgdgjfm.l.reposproject.ui.orders;
 
+import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.transition.TransitionInflater;
@@ -33,19 +34,11 @@ public class OrdersFragment extends Fragment {
         View root = binding.getRoot();
 
 
-        /*binding.currentOrders.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-              // FragmentTransaction fragmentTransaction=getS
-
-
-            }
-        });*/
-
         binding.buttonAddAsset1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               OrdersFragment ordersFragment=new OrdersFragment();
+
+
 
 
             }

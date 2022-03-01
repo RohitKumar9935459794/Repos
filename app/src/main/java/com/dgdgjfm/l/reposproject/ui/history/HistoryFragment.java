@@ -2,6 +2,9 @@ package com.dgdgjfm.l.reposproject.ui.history;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -16,12 +19,15 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.dgdgjfm.l.reposproject.databinding.FragmentHistoryBinding;
 import com.dgdgjfm.l.reposproject.ui.history.HistoryViewModel;
+import com.google.android.material.navigation.NavigationView;
 
 public class HistoryFragment extends Fragment {
 
     private HistoryViewModel historyViewModel;
     private @NonNull
     FragmentHistoryBinding binding;
+
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +36,9 @@ public class HistoryFragment extends Fragment {
 
         binding = FragmentHistoryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+
+
 
         final TextView textView = binding.textNotifications;
         historyViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
