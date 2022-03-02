@@ -35,12 +35,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_notifications"
         tools:ignore="SpeakableTextPresentCheck"
-        android:background="@color/teal_200">
+        android:background="@color/teal_200"
+        app:tabIndicator="@color/white"
+        app:tabSelectedTextColor="@color/white">
 
 
     </com.google.android.material.tabs.TabLayout>
 
-    <androidx.viewpager.widget.ViewPager
+    <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="600dp"

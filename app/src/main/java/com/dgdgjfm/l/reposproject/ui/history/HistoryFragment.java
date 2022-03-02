@@ -7,6 +7,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,13 +22,15 @@ import com.dgdgjfm.l.reposproject.adapter.HistoryFragmentAdpter;
 import com.dgdgjfm.l.reposproject.databinding.FragmentHistoryBinding;
 import com.dgdgjfm.l.reposproject.ui.history.HistoryViewModel;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.tabs.TabLayoutMediator;
 
 public class HistoryFragment extends Fragment {
 
     private HistoryViewModel historyViewModel;
     private @NonNull
     FragmentHistoryBinding binding;
-
+    HistoryFragmentAdpter historyFragmentAdpter;
+    private String[] titles= new String[]{"Current order,Past order"};
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -38,6 +41,12 @@ public class HistoryFragment extends Fragment {
         binding = FragmentHistoryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
+
+        historyFragmentAdpter= new HistoryFragmentAdpter(this);
+
+        binding.viewPager.setAdapter(historyFragmentAdpter);
+
+      new TabLayoutMediator(binding.tabLayout,binding.viewPager,((tab, position) -> tab.setText(titles[position]))).attach();
         // binding.viewPager.setAdapter(new HistoryFragmentAdpter( FragmentManager()));
 
 
