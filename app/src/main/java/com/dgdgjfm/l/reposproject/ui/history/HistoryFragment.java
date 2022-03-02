@@ -12,11 +12,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 
-
+import com.dgdgjfm.l.reposproject.adapter.HistoryFragmentAdpter;
 import com.dgdgjfm.l.reposproject.databinding.FragmentHistoryBinding;
 import com.dgdgjfm.l.reposproject.ui.history.HistoryViewModel;
 import com.google.android.material.navigation.NavigationView;
@@ -37,7 +38,7 @@ public class HistoryFragment extends Fragment {
         binding = FragmentHistoryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-
+        // binding.viewPager.setAdapter(new HistoryFragmentAdpter( FragmentManager()));
 
 
         final TextView textView = binding.textNotifications;
