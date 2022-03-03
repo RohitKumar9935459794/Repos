@@ -9,9 +9,12 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.dgdgjfm.l.reposproject.Add_AssetFragment;
+import com.dgdgjfm.l.reposproject.R;
 import com.dgdgjfm.l.reposproject.databinding.FragmentAssetBinding;
 
 public class AssetFragment extends Fragment {
@@ -26,12 +29,13 @@ public class AssetFragment extends Fragment {
 
         binding = FragmentAssetBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        Add_AssetFragment add_assetFragment =new Add_AssetFragment();
+        binding.buttonAddAsset1.setOnClickListener(view -> {
 
-        binding.buttonAddAsset1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-            }
+                    FragmentTransaction fragmentTransaction=getChildFragmentManager().beginTransaction();
+                    fragmentTransaction.add(R.id.assetFragment,add_assetFragment);
+                    fragmentTransaction.commit();
         });
 
         final TextView textView = binding.textHome;

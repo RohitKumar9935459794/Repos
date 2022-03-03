@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginWithOTP"
+    android:gravity="center">
+
+    <TextView
+        android:id="@+id/login_with_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_with_otp"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:layout_marginStart="40sp"
+        android:layout_marginEnd="40sp"
+        android:layout_marginTop="10dp"/>
+
+    <TextView
+        android:id="@+id/text3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_your_number"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:layout_marginStart="40sp"
+        android:layout_marginEnd="40sp"
+        android:layout_marginTop="10dp"/>
+
+    <EditText
+        android:id="@+id/input_mobile_number"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:text="+91"
+        android:inputType="phone"
+        android:layout_marginStart="40sp"
+        android:layout_marginEnd="40sp"
+        android:importantForAutofill="no"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/get_otp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Get Otp"
+        android:layout_marginStart="40sp"
+        android:layout_marginEnd="40sp"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>

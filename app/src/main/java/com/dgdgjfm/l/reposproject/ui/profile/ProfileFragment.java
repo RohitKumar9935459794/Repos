@@ -7,15 +7,19 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.dgdgjfm.l.reposproject.Add_AssetFragment;
 import com.dgdgjfm.l.reposproject.LoginActivity;
+import com.dgdgjfm.l.reposproject.R;
 import com.dgdgjfm.l.reposproject.databinding.FragmentProfileBinding;
 import com.dgdgjfm.l.reposproject.ui.profile.ProfileViewModel;
 import com.google.firebase.auth.FirebaseAuth;
@@ -46,6 +50,7 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onClick(View view) {
             auth.signOut();
+              Intent intent =new Intent(getActivity(),LoginActivity.class);
 
 
             }

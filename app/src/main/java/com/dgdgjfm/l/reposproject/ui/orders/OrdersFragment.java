@@ -32,16 +32,17 @@ public class OrdersFragment extends Fragment {
 
         binding = FragmentOrdersBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        Add_AssetFragment add_assetFragment =new Add_AssetFragment();
+
+        binding.buttonAddAsset1.setOnClickListener(view -> {
+
+            FragmentTransaction fragmentTransaction=getChildFragmentManager().beginTransaction();
+            fragmentTransaction.add(R.id.orderFragment,add_assetFragment);
+            fragmentTransaction.commit();
 
 
-        binding.buttonAddAsset1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
 
-
-
-            }
         });
 
         final TextView textView = binding.ordersText;
