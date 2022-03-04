@@ -17,6 +17,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.dgdgjfm.l.reposproject.Add_AssetFragment;
+import com.dgdgjfm.l.reposproject.Add_asset_Activity2;
 import com.dgdgjfm.l.reposproject.R;
 import com.dgdgjfm.l.reposproject.databinding.FragmentOrdersBinding;
 
@@ -35,9 +36,12 @@ public class OrdersFragment extends Fragment {
         Add_AssetFragment add_assetFragment =new Add_AssetFragment();
 
         binding.buttonAddAsset1.setOnClickListener(view -> {
+            // this open the Add asset activity
+            startActivity(new Intent(getActivity(), Add_asset_Activity2.class));
 
+            // this changes the fragment
             FragmentTransaction fragmentTransaction=getChildFragmentManager().beginTransaction();
-            fragmentTransaction.add(R.id.orderFragment,add_assetFragment);
+            fragmentTransaction.replace(R.id.orderFragment,add_assetFragment);
             fragmentTransaction.commit();
 
 
