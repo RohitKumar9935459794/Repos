@@ -11,20 +11,30 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
+import com.dgdgjfm.l.reposproject.databinding.ActivityBasicDetailsBinding;
 import com.dgdgjfm.l.reposproject.databinding.ActivityOtpForSigninBinding;
+import com.dgdgjfm.l.reposproject.model.Users;
 import com.google.android.gms.auth.api.phone.SmsRetriever;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.concurrent.TimeUnit;
 
 public class Otp_for_signin extends AppCompatActivity {
       ActivityOtpForSigninBinding binding;
        private String  verificationId;
        private OtpReciver otpReciver;
 
+    FirebaseAuth auth;
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks mCallbacks;
+    FirebaseDatabase database;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +50,7 @@ public class Otp_for_signin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(Otp_for_signin.this, "Otp send Successfully", Toast.LENGTH_SHORT).show();
+                againOtpSend();
             }
         });
 
@@ -154,17 +165,67 @@ public class Otp_for_signin extends AppCompatActivity {
         otpReciver.inItListener(new OtpReciver.OtpReciverListener() {
             @Override
             public void onOtpSuccess(String otp) {
+             int o1= Character.getNumericValue(otp.charAt(0));
+                int o2= Character.getNumericValue(otp.charAt(1));
+                int o3= Character.getNumericValue(otp.charAt(2));
+                int o4= Character.getNumericValue(otp.charAt(3));
 
+                binding.otp12.setText(String.valueOf(o1));
+                binding.otp22.setText(String.valueOf(o2));
+                binding.otp32.setText(String.valueOf(o3));
+                binding.otp42.setText(String.valueOf(o4));
             }
 
             @Override
             public void onOtpTimeOut() {
-
+                Toast.makeText(Otp_for_signin.this, "Something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
     }
 
-   /* private  void  editTextInput(){
+    private  void  phoneInput(){
 
-    } */
+    }
+
+    private void againOtpSend() {
+
+        mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+
+            @Override
+            public void onVerificationCompleted(PhoneAuthCredential credential) {
+
+            }
+
+            @Override
+            public void onVerificationFailed(FirebaseException e) {
+                Toast.makeText(Otp_for_signin.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+
+
+            @Override
+            public void onCodeSent(@NonNull String verificationId,
+                                   @NonNull PhoneAuthProvider.ForceResendingToken token) {
+                Toast.makeText(Otp_for_signin.this,"Otp send Successfully",Toast.LENGTH_SHORT).show();
+
+            }
+        };
+        PhoneAuthOptions options =
+                PhoneAuthOptions.newBuilder(auth)
+                        .setPhoneNumber("+91"+getIntent().getStringExtra("phone").trim())       // Phone number to verify
+                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                        .setActivity(Otp_for_signin.this)                 // Activity (for callback binding)
+                        .setCallbacks(mCallbacks)          // OnVerificationStateChangedCallbacks
+                        .build();
+        PhoneAuthProvider.verifyPhoneNumber(options);
+    }
+
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (otpReciver!=null){
+            unregisterReceiver(otpReciver);
+        }
+    }
 }
