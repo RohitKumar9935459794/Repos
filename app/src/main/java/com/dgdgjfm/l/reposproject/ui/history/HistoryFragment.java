@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.viewpager.widget.ViewPager;
+import androidx.viewpager2.widget.ViewPager2;
 
 
 import com.dgdgjfm.l.reposproject.adapter.HistoryFragmentAdpter;
@@ -35,8 +37,7 @@ public class HistoryFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        historyViewModel =
-                new ViewModelProvider(this).get(HistoryViewModel.class);
+        historyViewModel = new ViewModelProvider(this).get(HistoryViewModel.class);
 
         binding = FragmentHistoryBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
@@ -48,7 +49,6 @@ public class HistoryFragment extends Fragment {
 
       new TabLayoutMediator(binding.tabLayout,binding.viewPager,((tab, position) -> tab.setText(titles[position]))).attach();
         // binding.viewPager.setAdapter(new HistoryFragmentAdpter( FragmentManager()));
-
 
         final TextView textView = binding.textNotifications;
         historyViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {

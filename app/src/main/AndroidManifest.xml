@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ReposProject">
         <activity
+            android:name=".Report_An_issue"
+            android:exported="false" />
+        <activity
+            android:name=".Update_profile"
+            android:exported="false" />
+        <activity
             android:name=".Add_asset_Activity2"
             android:exported="false" />
         <activity
@@ -29,7 +35,8 @@
         <activity
             android:name=".LoginActivity"
             android:exported="true"
-            android:label="@string/app_name" />
+            android:label="@string/app_name" >   
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"

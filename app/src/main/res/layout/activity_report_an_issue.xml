@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Report_An_issue"
+    android:layout_marginTop="30dp"
+    android:layout_marginBottom="30dp"
+    android:layout_marginEnd="30dp"
+    android:layout_marginStart="30dp">
+
+    <TextView
+        android:id="@+id/Report_textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Report An issue"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/report"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/sendReportButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="send"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

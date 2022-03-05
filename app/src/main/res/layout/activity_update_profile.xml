@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Update_profile"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="30dp"
+    android:layout_marginEnd="30dp"
+    android:layout_marginRight="30dp">
+
+    <EditText
+        android:id="@+id/updateName"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/updatePassword"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="number"
+        android:text="Update password"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/update_email"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="@string/email"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/update_companyName"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="@string/company_name"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/update_phone"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="phone"
+        android:text="@string/phone"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/update_industryType"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Industry Type"
+        android:padding="5dp"/>
+
+    <EditText
+        android:id="@+id/update_officialEmail"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="Official email"
+        android:padding="5dp"/>
+
+    <Button
+        android:id="@+id/updateButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update"
+        android:layout_marginTop="30dp"/>
+</LinearLayout>
