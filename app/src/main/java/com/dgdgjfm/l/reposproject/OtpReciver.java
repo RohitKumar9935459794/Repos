@@ -25,38 +25,39 @@ public class OtpReciver extends BroadcastReceiver {
    }
     @Override
     public void onReceive(Context context, Intent intent) {
-     if(SmsRetriever.SMS_RETRIEVED_ACTION.equals(intent.getAction()));
+     if(SmsRetriever.SMS_RETRIEVED_ACTION.equals(intent.getAction())){
         Bundle bundle=intent.getExtras();
-        if(bundle!=null){
-            Status status= (Status) bundle.get(SmsRetriever.EXTRA_STATUS);
-            if (status!=null){
-                switch (status.getStatusCode()){
+        if(bundle!=null) {
+            Status status = (Status) bundle.get(SmsRetriever.EXTRA_STATUS);
+            if (status != null) {
+                switch (status.getStatusCode()) {
                     case CommonStatusCodes
                             .SUCCESS:
-                        String message= (String) bundle.get(SmsRetriever.EXTRA_SMS_MESSAGE);
-                    if(message!=null){
-                        Pattern pattern= Pattern.compile("\\d{4}");
-                        Matcher matcher= pattern.matcher(message);
-                        if(matcher.find()){
-                            String myOtp= matcher.group(0);
-                            if(this.otpReciverListener!=null){
-                                this.otpReciverListener.onOtpSuccess(myOtp);
+                        String message = (String) bundle.get(SmsRetriever.EXTRA_SMS_MESSAGE);
+                        if (message != null) {
+                            Pattern pattern = Pattern.compile("\\d{4}");
+                            Matcher matcher = pattern.matcher(message);
+                            if (matcher.find()) {
+                                String myOtp = matcher.group(0);
+                                if (this.otpReciverListener != null) {
+                                    this.otpReciverListener.onOtpSuccess(myOtp);
 
-                            }else {
-                                if (this.otpReciverListener!=null){
-                                    this.otpReciverListener.onOtpTimeOut();
+                                } else {
+                                    if (this.otpReciverListener != null) {
+                                        this.otpReciverListener.onOtpTimeOut();
+                                    }
                                 }
                             }
                         }
-                    }
-                    break;
+                        break;
                     case CommonStatusCodes.TIMEOUT:
-                        if (this.otpReciverListener!=null){
+                        if (this.otpReciverListener != null) {
                             this.otpReciverListener.onOtpTimeOut();
                         }
                         break;
                 }
             }
+          }
         }
     }
     public  interface OtpReciverListener{

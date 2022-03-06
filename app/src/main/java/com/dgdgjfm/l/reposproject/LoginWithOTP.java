@@ -38,8 +38,9 @@ public class LoginWithOTP extends AppCompatActivity {
               if (!binding.inputMobileNumber.getText().toString().trim().isEmpty()) {
                   if ((binding.inputMobileNumber.getText().toString().trim()).length()==10){
                       progressDialog.dismiss();
-                      startActivity(new Intent(LoginWithOTP.this,OTP_Activity.class));
-
+                      Intent intent= new Intent(LoginWithOTP.this,OTP_Activity.class);
+                      intent.putExtra("phone",binding.inputMobileNumber.getText().toString().trim());
+                      startActivity(intent);
                   }else{
                       Toast.makeText(LoginWithOTP.this, "Please enter correct number", Toast.LENGTH_SHORT).show();
                   }
