@@ -11,9 +11,8 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
 
-import com.dgdgjfm.l.reposproject.databinding.ActivityBasicDetailsBinding;
 import com.dgdgjfm.l.reposproject.databinding.ActivityOtpForSigninBinding;
-import com.dgdgjfm.l.reposproject.model.Users;
+import com.dgdgjfm.l.reposproject.otp_Reciver.OtpReciver;
 import com.google.android.gms.auth.api.phone.SmsRetriever;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

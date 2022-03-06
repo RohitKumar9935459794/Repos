@@ -36,7 +36,7 @@
             android:name=".BasicDetails"
             android:exported="false" />
         <receiver
-            android:name=".OtpReciver" android:exported="true"
+            android:name=".otp_Reciver.OtpReciver" android:exported="true"
             android:permission="com.google.android.gms.auth.api.phone.permission.SEND">
             <intent-filter>
                 <action android:name="com.google.android.gms.auth.api.phone.SMS_RETRIEVED"/>
