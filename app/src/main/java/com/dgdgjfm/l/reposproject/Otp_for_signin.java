@@ -157,7 +157,7 @@ public class Otp_for_signin extends AppCompatActivity {
 
             }
         });
-       
+
     }
     private void autoOtpReceiver(){
         otpReciver= new OtpReciver();
@@ -193,7 +193,7 @@ public class Otp_for_signin extends AppCompatActivity {
 
             @Override
             public void onVerificationCompleted(PhoneAuthCredential credential) {
-
+                Toast.makeText(Otp_for_signin.this,"Going next page",Toast.LENGTH_SHORT).show();
             }
 
             @Override

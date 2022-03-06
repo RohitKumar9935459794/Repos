@@ -11,7 +11,10 @@ import android.widget.Toast;
 
 import com.dgdgjfm.l.reposproject.databinding.ActivityBasicDetailsBinding;
 import com.dgdgjfm.l.reposproject.model.Users;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
@@ -28,6 +31,7 @@ public class BasicDetails extends AppCompatActivity {
     FirebaseDatabase database;
     public String verificationId;
     public String token;
+    private static final String TAG =" get some error" ;
 
 
     @Override
@@ -52,6 +56,7 @@ public class BasicDetails extends AppCompatActivity {
                 }
             }
 
+          
             private void otpSend() {
 
                 mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
@@ -60,6 +65,8 @@ public class BasicDetails extends AppCompatActivity {
                     public void onVerificationCompleted(PhoneAuthCredential credential) {
 
                     }
+
+                  
 
                     @Override
                     public void onVerificationFailed(FirebaseException e) {
@@ -75,8 +82,10 @@ public class BasicDetails extends AppCompatActivity {
                        intent.putExtra("phone",binding.phone.getText().toString().trim());
                        intent.putExtra("verificationId",verificationId);
                        startActivity(intent);
+
                         Users users = new Users(binding.fullName.getText().toString(), binding.phone.getText().toString());
                         database.getReference("Basic Details").child(users.getMobile()).setValue(users);
+
                     }
                 };
                 PhoneAuthOptions options =
@@ -97,4 +106,6 @@ public class BasicDetails extends AppCompatActivity {
             }
         });
     }
+
+
 }
