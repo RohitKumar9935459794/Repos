@@ -48,7 +48,7 @@ public class ProfileFragment extends Fragment {
             auth.signOut();
             FirebaseAuth.getInstance().signOut();
               Intent intent =new Intent(getActivity(),LoginActivity.class);
-
+               startActivity(intent);
 
             }
         });
@@ -74,6 +74,8 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+      
+
        final TextView textView = binding.supportText;
         ProfileViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
@@ -83,6 +85,7 @@ public class ProfileFragment extends Fragment {
         });
         return root;
     }
+
 
     @Override
     public void onDestroyView() {

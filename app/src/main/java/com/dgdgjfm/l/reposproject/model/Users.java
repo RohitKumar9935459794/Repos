@@ -16,6 +16,8 @@ public class Users {
         this.industryType = industryType;
     }
 
+
+
     public Users(){}
 
     //company registration

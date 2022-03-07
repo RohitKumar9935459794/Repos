@@ -11,14 +11,29 @@
     android:layout_marginEnd="30dp"
     android:layout_marginRight="30dp">
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_name"
+        android:textStyle="bold"/>
+
     <EditText
         android:id="@+id/updateName"
         android:layout_width="match_parent"
         android:layout_height="49dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
-        android:padding="5dp"/>
+        android:padding="5dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_password"
+        android:textStyle="bold"/>
+
 
     <EditText
         android:id="@+id/updatePassword"
@@ -26,8 +41,16 @@
         android:layout_height="49dp"
         android:ems="10"
         android:inputType="number"
-        android:text="Update password"
-        android:padding="5dp"/>
+        android:padding="5dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_email"
+        android:textStyle="bold"/>
+
 
     <EditText
         android:id="@+id/update_email"
@@ -35,8 +58,16 @@
         android:layout_height="49dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="@string/email"
+        tools:ignore="SpeakableTextPresentCheck"
         android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_company_name"
+        android:textStyle="bold"/>
+
 
     <EditText
         android:id="@+id/update_companyName"
@@ -44,8 +75,16 @@
         android:layout_height="49dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="@string/company_name"
+        tools:ignore="SpeakableTextPresentCheck"
         android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_phone_number"
+        android:textStyle="bold"/>
+
 
     <EditText
         android:id="@+id/update_phone"
@@ -53,8 +92,16 @@
         android:layout_height="49dp"
         android:ems="10"
         android:inputType="phone"
-        android:text="@string/phone"
+        tools:ignore="SpeakableTextPresentCheck"
         android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_industry_type"
+        android:textStyle="bold"/>
+
 
     <EditText
         android:id="@+id/update_industryType"
@@ -62,8 +109,16 @@
         android:layout_height="49dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Industry Type"
+        tools:ignore="SpeakableTextPresentCheck"
         android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/update_official_email"
+        android:textStyle="bold"/>
+
 
     <EditText
         android:id="@+id/update_officialEmail"
@@ -71,13 +126,13 @@
         android:layout_height="49dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="Official email"
+        tools:ignore="SpeakableTextPresentCheck"
         android:padding="5dp"/>
 
     <Button
         android:id="@+id/updateButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Update"
+        android:text="@string/update"
         android:layout_marginTop="30dp"/>
 </LinearLayout>

@@ -13,5 +13,6 @@ public class Add_asset_Activity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityAddAsset2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
     }
 }

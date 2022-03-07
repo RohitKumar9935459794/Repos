@@ -6,8 +6,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Add_asset_Activity2">
+
+
+
     <LinearLayout
-        android:layout_width="600dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <ImageView
