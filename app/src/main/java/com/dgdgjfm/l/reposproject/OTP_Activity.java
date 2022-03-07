@@ -44,6 +44,8 @@ public class OTP_Activity extends AppCompatActivity {
 
         phoneNumber=getIntent().getStringExtra("phone").toString();
 
+
+          editTextInput();
         binding.enterMobileForOtp.setText(String.format(
                 "+91-%s",getIntent().getStringExtra("phone")
         ));
@@ -162,7 +164,7 @@ public class OTP_Activity extends AppCompatActivity {
         });
 
     }
-    private void autoOtpReceiver(){
+   private void autoOtpReceiver(){
         otpReciver= new OtpReciver();
         this.registerReceiver(otpReciver,new IntentFilter(SmsRetriever.SMS_RETRIEVED_ACTION));
         otpReciver.inItListener(new OtpReciver.OtpReciverListener() {
@@ -188,7 +190,7 @@ public class OTP_Activity extends AppCompatActivity {
 
     private  void  phoneInput(){
 
-    }
+    }  
 
     private void againOtpSend() {
 
@@ -196,7 +198,7 @@ public class OTP_Activity extends AppCompatActivity {
 
             @Override
             public void onVerificationCompleted(PhoneAuthCredential credential) {
-
+                signInWithPhoneAuthCredential( credential);
             }
 
             @Override
@@ -222,6 +224,26 @@ public class OTP_Activity extends AppCompatActivity {
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
 
+    private void signInWithPhoneAuthCredential(PhoneAuthCredential credential) {
+        auth.signInWithCredential(credential).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(OTP_Activity.this,"Otp send Successfully",Toast.LENGTH_SHORT).show();
+                    Intent intent= new Intent(OTP_Activity.this,SignUpActivity.class);
+                    intent.putExtra("phone",binding.enterMobileForOtp.getText().toString().trim());
+                    String id=task.getResult().getUser().getUid();
+                    intent.putExtra("UserId",id);
+                    startActivity(intent);
+
+
+
+                }else {
+                    Toast.makeText(OTP_Activity.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 
 
     @Override

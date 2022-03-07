@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     ActivityLoginBinding binding;
     ProgressDialog progressDialog;
     FirebaseAuth auth;
-
+    private String Id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         auth=FirebaseAuth.getInstance();
-
+        Id=getIntent().getStringExtra("ID") ;
         progressDialog=new ProgressDialog(LoginActivity.this);
         progressDialog.setTitle("You are singIp");
         progressDialog.setMessage("You are login your account");
@@ -50,7 +50,9 @@ public class LoginActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                              progressDialog.dismiss();
                              if(task.isSuccessful()){
-                                 startActivity(new Intent(LoginActivity.this,MainActivity.class));
+                                Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+                                 intent.putExtra("UserId",Id);
+                                 startActivity(intent);
                              }else {
                                  Toast.makeText(LoginActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                              }

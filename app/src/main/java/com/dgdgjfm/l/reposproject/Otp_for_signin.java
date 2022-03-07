@@ -39,6 +39,9 @@ public class Otp_for_signin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityOtpForSigninBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        getSupportActionBar().hide();
+
+
           editTextInput();
         binding.editTextTextPersonName2.setText(String.format(
           "+91-%s",getIntent().getStringExtra("phone")

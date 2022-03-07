@@ -14,7 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CompanyRegistration extends AppCompatActivity {
     ActivityCompanyRegistrationBinding binding;
     FirebaseDatabase database;
-   // DatabaseReference reference;
+   private String Id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class CompanyRegistration extends AppCompatActivity {
 
         getSupportActionBar().hide();
         database=FirebaseDatabase.getInstance();
-        //reference=database.getReference("CompanyDetails");
+        Id=getIntent().getStringExtra("ID") ;
 
 
 
@@ -36,9 +36,10 @@ public class CompanyRegistration extends AppCompatActivity {
                         binding.industryType.getText().toString());
 
               //  reference.setValue(users);
-                database.getReference("CompanyDetails").child(users.getEmail()).setValue(users);
-                startActivity(new Intent(CompanyRegistration.this,LoginActivity.class));
-
+                database.getReference("CompanyDetails"). child(Id).child(users.getEmail()).setValue(Id+users);
+                Intent intent= new Intent(CompanyRegistration.this,LoginActivity.class);
+                intent.putExtra("UserId",Id);
+               startActivity(intent);
 
             }
         });

@@ -14,7 +14,7 @@ public class Update_profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding=ActivityUpdateProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        getSupportActionBar().hide();
         binding.updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

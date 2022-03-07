@@ -22,13 +22,16 @@ public class SignUpActivity extends AppCompatActivity {
         FirebaseAuth auth;
         FirebaseDatabase database;
         ProgressDialog progressDialog;
+    private String  Phone;
+    private String  full_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        Phone=getIntent().getStringExtra("phone") ;
+        full_name=getIntent().getStringExtra("fullName") ;
 
         getSupportActionBar().hide();
         auth=FirebaseAuth.getInstance();
@@ -45,14 +48,16 @@ public class SignUpActivity extends AppCompatActivity {
                         binding.enterPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
+                        progressDialog.show();
                       if(task.isSuccessful()){
                           Users users= new Users(binding.emailAddress.getText().toString(),
                                   binding.enterPassword.getText().toString());
 
                           String id=task.getResult().getUser().getUid();
-                          database.getReference().child("Users").child(id).setValue(users);
-                          startActivity(new Intent(SignUpActivity.this,CompanyRegistration.class));
+                          database.getReference().child("Users").child(id).setValue(users+Phone+full_name);
+                         Intent intent= new Intent(SignUpActivity.this,CompanyRegistration.class);
+                          intent.putExtra("UserId",id);
+                          startActivity(intent);
 
                           Toast.makeText(SignUpActivity.this, "User created Successfully", Toast.LENGTH_SHORT).show();
                           

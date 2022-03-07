@@ -53,6 +53,7 @@ public class LoginWithOTP extends AppCompatActivity {
               if (!binding.inputMobileNumber.getText().toString().trim().isEmpty()) {
                   if ((binding.inputMobileNumber.getText().toString().trim()).length()==10){
                       progressDialog.dismiss();
+                      sendOtp();
                       Intent intent= new Intent(LoginWithOTP.this,OTP_Activity.class);
                       intent.putExtra("phone",binding.inputMobileNumber.getText().toString().trim());
                       startActivity(intent);

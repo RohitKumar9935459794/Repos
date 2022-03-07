@@ -3,6 +3,7 @@ package com.dgdgjfm.l.reposproject;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +32,7 @@ public class BasicDetails extends AppCompatActivity {
     FirebaseDatabase database;
     public String verificationId;
     public String token;
+    ProgressDialog progressDialog;
     private static final String TAG =" get some error" ;
 
 
@@ -41,16 +43,23 @@ public class BasicDetails extends AppCompatActivity {
         setContentView(binding.getRoot());
         database=FirebaseDatabase.getInstance();
         auth=FirebaseAuth.getInstance();
+        progressDialog=new ProgressDialog(BasicDetails.this);
+        progressDialog.setTitle("You are singUp");
+        progressDialog.setMessage("We are sending OTP");
 
         binding.buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressDialog.show();
                 if(binding.phone.getText().toString().trim().isEmpty()|| binding.fullName.toString().trim().isEmpty()){
+                    progressDialog.dismiss();
                     Toast.makeText(BasicDetails.this, " please enter details", Toast.LENGTH_SHORT).show();
                 }else if(binding.phone.getText().toString().trim().length()!=10){
+                    progressDialog.dismiss();
                     Toast.makeText(BasicDetails.this, "Please enter Correct number", Toast.LENGTH_SHORT).show();
                 } else {
                     otpSend();
+                    progressDialog.dismiss();
 
 
                 }
@@ -80,6 +89,7 @@ public class BasicDetails extends AppCompatActivity {
                         Toast.makeText(BasicDetails.this,"Otp send Successfully",Toast.LENGTH_SHORT).show();
                        Intent intent= new Intent(BasicDetails.this,Otp_for_signin.class);
                        intent.putExtra("phone",binding.phone.getText().toString().trim());
+                        intent.putExtra("fullName",binding.fullName.getText().toString().trim());
                        intent.putExtra("verificationId",verificationId);
                        startActivity(intent);
 
