@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,28 +20,55 @@ import com.dgdgjfm.l.reposproject.Report_An_issue;
 import com.dgdgjfm.l.reposproject.Update_profile;
 import com.dgdgjfm.l.reposproject.databinding.FragmentProfileBinding;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class ProfileFragment extends Fragment {
 
     private ProfileViewModel ProfileViewModel;
     private FragmentProfileBinding binding;
     FirebaseAuth auth;
+    FirebaseDatabase database;
     ProgressDialog progressDialog;
-    
+    DatabaseReference reference;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
         auth=FirebaseAuth.getInstance();
+        reference= FirebaseDatabase.getInstance().getReference().child("Users");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    String Name= dataSnapshot.child("fullName").getValue().toString();
+                    String Email= dataSnapshot.child("email").getValue().toString();
+                    String Phone= dataSnapshot.child("mobile").getValue().toString();
 
-      /*  progressDialog=new ProgressDialog(this);
-        progressDialog.setTitle("You are singIp");
-        progressDialog.setMessage("You are login your account");*/
+                    binding.profileName.setText(Name);
+                    binding.profileEmail.setText(Email);
+                    binding.editTextPhone.setText(Phone);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        }) ;
+
+
 
         ProfileViewModel = new ViewModelProvider(this).get(ProfileViewModel.class);
 
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+      //  String profileName= binding.profileName.get
 
         binding.logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +112,8 @@ public class ProfileFragment extends Fragment {
             }
         });
         return root;
+
+
     }
 
 
