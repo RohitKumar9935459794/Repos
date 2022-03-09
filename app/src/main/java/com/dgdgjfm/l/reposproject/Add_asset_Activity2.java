@@ -22,22 +22,21 @@ public class Add_asset_Activity2 extends AppCompatActivity {
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
 
-        ArrayList<String> asset = new ArrayList<>();
-        asset.add("DG Set");
-        asset.add("Industrial Machine");
-        asset.add("Infrastructure Machine");
-        asset.add("Heavy Vehicles");
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, asset);
-        binding.listView.setAdapter(arrayAdapter);
-
-        binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        binding.buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String text =" Item" + i+""+view.toString();
-                Toast.makeText(Add_asset_Activity2.this,text, Toast.LENGTH_SHORT).show();
+            public void onClick(View view) {
+
             }
         });
+
+          binding.myLocation.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+
+              }
+          });
+
+
 
 
     }

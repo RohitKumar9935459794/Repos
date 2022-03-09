@@ -48,4 +48,5 @@
     <string name="update_phone_number">Update Phone Number</string>
     <string name="update_industry_type">Update Industry Type</string>
     <string name="update_official_email">Update Official Email</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>
