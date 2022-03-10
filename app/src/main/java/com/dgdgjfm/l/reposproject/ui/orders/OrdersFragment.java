@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.dgdgjfm.l.reposproject.Changes_Fragment;
+import com.dgdgjfm.l.reposproject.Changes_Fragment_Order;
 import com.dgdgjfm.l.reposproject.Add_asset_Activity2;
 import com.dgdgjfm.l.reposproject.R;
 import com.dgdgjfm.l.reposproject.databinding.FragmentOrdersBinding;
@@ -31,7 +31,7 @@ public class OrdersFragment extends Fragment {
 
         binding = FragmentOrdersBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        Changes_Fragment changesFragment =new Changes_Fragment();
+        Changes_Fragment_Order changesFragment =new Changes_Fragment_Order();
 
         binding.buttonAddAsset1.setOnClickListener(view -> {
             // this open the Add asset activity

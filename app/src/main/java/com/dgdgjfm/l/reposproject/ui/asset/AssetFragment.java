@@ -14,7 +14,8 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.dgdgjfm.l.reposproject.Changes_Fragment;
+import com.dgdgjfm.l.reposproject.Change_Fragement_Asset;
+import com.dgdgjfm.l.reposproject.Changes_Fragment_Order;
 import com.dgdgjfm.l.reposproject.Add_asset_Activity2;
 import com.dgdgjfm.l.reposproject.R;
 import com.dgdgjfm.l.reposproject.databinding.FragmentAssetBinding;
@@ -31,14 +32,14 @@ public class AssetFragment extends Fragment {
 
         binding = FragmentAssetBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        Changes_Fragment changesFragment =new Changes_Fragment();
+        Change_Fragement_Asset change_fragement_asset= new Change_Fragement_Asset();
         binding.buttonAddAsset1.setOnClickListener(view -> {
              // this open the Add asset activity
              startActivity(new Intent(getActivity(), Add_asset_Activity2.class));
 
              // this changes the fragment design
                     FragmentTransaction fragmentTransaction=getChildFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.assetFragment, changesFragment);
+                    fragmentTransaction.replace(R.id.assetFragment, change_fragement_asset);
                     fragmentTransaction.commit();
         });
 
