@@ -60,7 +60,7 @@ public class Change_Fragement_Asset extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_change__fragement__asset, container, false);
-
+       
 
     }
 }
