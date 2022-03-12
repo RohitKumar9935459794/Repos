@@ -7,10 +7,17 @@
 
    <!-- TODO: Update blank fragment layout -->
 
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="500dp"
+        android:layout_marginTop="50dp">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
 
     <Button
         android:id="@+id/button_add_more"
@@ -18,6 +25,6 @@
         android:layout_height="wrap_content"
         android:text="Add More"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="250dp"/>
 
 </FrameLayout>
