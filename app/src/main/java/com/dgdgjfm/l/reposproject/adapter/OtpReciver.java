@@ -1,4 +1,4 @@
-package com.dgdgjfm.l.reposproject.otp_Reciver;
+package com.dgdgjfm.l.reposproject.adapter;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -11,8 +11,6 @@ import com.google.android.gms.common.api.Status;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import javax.net.ssl.SSLEngineResult;
 
 public class OtpReciver extends BroadcastReceiver {
 

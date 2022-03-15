@@ -1,12 +1,12 @@
 package com.dgdgjfm.l.reposproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.dgdgjfm.l.reposproject.databinding.ActivityReportAnIssueBinding;
-import com.dgdgjfm.l.reposproject.model.Report;
+import com.dgdgjfm.l.reposproject.model.Report_model;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class Report_An_issue extends AppCompatActivity {
@@ -26,8 +26,8 @@ public class Report_An_issue extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Report report= new Report(binding.report.getText().toString());
-                database.getReference("Report An Issue").child(Id).setValue(Id+report);
+                Report_model reportModel = new Report_model(binding.reportModel.getText().toString());
+                database.getReference("Report_model An Issue").child(Id).setValue(Id+ reportModel);
 
             }
         });

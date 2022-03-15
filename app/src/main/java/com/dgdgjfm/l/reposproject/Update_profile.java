@@ -1,13 +1,12 @@
 package com.dgdgjfm.l.reposproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.dgdgjfm.l.reposproject.databinding.ActivityUpdateProfileBinding;
-import com.dgdgjfm.l.reposproject.model.Users;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
 

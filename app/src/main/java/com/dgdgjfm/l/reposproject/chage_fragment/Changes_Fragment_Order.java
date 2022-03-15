@@ -1,19 +1,20 @@
-package com.dgdgjfm.l.reposproject;
+package com.dgdgjfm.l.reposproject.chage_fragment;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+
+import com.dgdgjfm.l.reposproject.R;
+
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Change_Fragement_Asset#newInstance} factory method to
+ * Use the {@link Changes_Fragment_Order#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Change_Fragement_Asset extends Fragment {
+public class Changes_Fragment_Order extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +25,7 @@ public class Change_Fragement_Asset extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public Change_Fragement_Asset() {
+    public Changes_Fragment_Order() {
         // Required empty public constructor
     }
 
@@ -34,11 +35,11 @@ public class Change_Fragement_Asset extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Change_Fragement_Asset.
+     * @return A new instance of fragment Changes_Fragment_Order.
      */
     // TODO: Rename and change types and number of parameters
-    public static Change_Fragement_Asset newInstance(String param1, String param2) {
-        Change_Fragement_Asset fragment = new Change_Fragement_Asset();
+    public static Changes_Fragment_Order newInstance(String param1, String param2) {
+        Changes_Fragment_Order fragment = new Changes_Fragment_Order();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,8 +60,6 @@ public class Change_Fragement_Asset extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_change__fragement__asset, container, false);
-       
-
+        return inflater.inflate(R.layout.fragment_change_order, container, false);
     }
 }

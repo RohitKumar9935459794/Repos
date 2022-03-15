@@ -1,6 +1,6 @@
 package com.dgdgjfm.l.reposproject.model;
 
-public class Report {
+public class Report_model {
 
 
     String report;
@@ -14,11 +14,11 @@ public class Report {
         this.report = report;
     }
 
-    public Report(String report) {
+    public Report_model(String report) {
         this.report = report;
     }
 
-    public Report() {
+    public Report_model() {
 
     }
 

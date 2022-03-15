@@ -2,28 +2,19 @@ package com.dgdgjfm.l.reposproject.ui.history;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.widget.ViewPager2;
 
 
 import com.dgdgjfm.l.reposproject.adapter.HistoryFragmentAdpter;
 import com.dgdgjfm.l.reposproject.databinding.FragmentHistoryBinding;
-import com.dgdgjfm.l.reposproject.ui.history.HistoryViewModel;
-import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayoutMediator;
 
 public class HistoryFragment extends Fragment {

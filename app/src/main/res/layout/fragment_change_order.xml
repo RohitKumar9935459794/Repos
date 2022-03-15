@@ -5,7 +5,7 @@
     android:id="@+id/changesFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Changes_Fragment_Order">
+    tools:context=".chage_fragment.Changes_Fragment_Order">
 
     <FrameLayout
         android:layout_width="match_parent"

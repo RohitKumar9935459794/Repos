@@ -1,17 +1,11 @@
 package com.dgdgjfm.l.reposproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.dgdgjfm.l.reposproject.databinding.ActivityAddAsset2Binding;
-
-import java.util.ArrayList;
 
 public class Add_asset_Activity2 extends AppCompatActivity {
      ActivityAddAsset2Binding binding;

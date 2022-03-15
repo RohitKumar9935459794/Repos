@@ -14,9 +14,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.dgdgjfm.l.reposproject.Changes_Fragment_Order;
 import com.dgdgjfm.l.reposproject.Add_asset_Activity2;
 import com.dgdgjfm.l.reposproject.R;
+import com.dgdgjfm.l.reposproject.chage_fragment.Changes_Fragment_Order;
 import com.dgdgjfm.l.reposproject.databinding.FragmentOrdersBinding;
 
 

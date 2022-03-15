@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,7 +14,6 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.dgdgjfm.l.reposproject.LoginActivity;
 import com.dgdgjfm.l.reposproject.Report_An_issue;
 import com.dgdgjfm.l.reposproject.Update_profile;
 import com.dgdgjfm.l.reposproject.databinding.FragmentProfileBinding;
@@ -28,12 +26,13 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileFragment extends Fragment {
 
-    private ProfileViewModel ProfileViewModel;
+    private com.dgdgjfm.l.reposproject.ui.profile.ProfileViewModel ProfileViewModel;
     private FragmentProfileBinding binding;
     FirebaseAuth auth;
     FirebaseDatabase database;
     ProgressDialog progressDialog;
     DatabaseReference reference;
+
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -45,13 +44,13 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
-           /*         String Name= dataSnapshot.child("fullName").getValue().toString();
+                   String Name= dataSnapshot.child("fullName").getValue().toString();
                     String Email= dataSnapshot.child("email").getValue().toString();
                     String Phone= dataSnapshot.child("mobile").getValue().toString();
 
                     binding.profileName.setText(Name);
                     binding.profileEmail.setText(Email);
-                    binding.editTextPhone.setText(Phone); */
+                    binding.editTextPhone.setText(Phone);
                 }
             }
 
@@ -68,15 +67,16 @@ public class ProfileFragment extends Fragment {
         binding = FragmentProfileBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-      //  String profileName= binding.profileName.get
+
+
 
         binding.logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
             auth.signOut();
             FirebaseAuth.getInstance().signOut();
-              Intent intent =new Intent(getActivity(),LoginActivity.class);
-               startActivity(intent);
+             // startActivity( new Intent(getActivity(),LoginActivity.class));
 
             }
         });
