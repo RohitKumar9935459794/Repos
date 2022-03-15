@@ -22,6 +22,9 @@ public class Changes_Fragment_Order extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
+        
+
+
         return inflater.inflate(R.layout.fragment_change_order, container, false);
        /* ArrayAdapter<String> adapter= new ArrayAdapter<String>
                 (Changes_Fragment_Order.this, android.R.layout.simple_expandable_list_item_1);
