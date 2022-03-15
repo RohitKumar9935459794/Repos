@@ -44,13 +44,13 @@ public class ProfileFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren()){
-                   String Name= dataSnapshot.child("fullName").getValue().toString();
+                 /* // String Name= dataSnapshot.child("fullName").getValue().toString();
                     String Email= dataSnapshot.child("email").getValue().toString();
                     String Phone= dataSnapshot.child("mobile").getValue().toString();
 
-                    binding.profileName.setText(Name);
+                   // binding.profileName.setText(Name);
                     binding.profileEmail.setText(Email);
-                    binding.editTextPhone.setText(Phone);
+                    binding.editTextPhone.setText(Phone);*/
                 }
             }
 
