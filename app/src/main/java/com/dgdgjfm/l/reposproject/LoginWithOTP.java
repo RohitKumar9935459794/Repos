@@ -56,9 +56,11 @@ public class LoginWithOTP extends AppCompatActivity {
                       intent.putExtra("phone",binding.inputMobileNumber.getText().toString().trim());
                       startActivity(intent);
                   }else{
+                      progressDialog.dismiss();
                       Toast.makeText(LoginWithOTP.this, "Please enter correct number", Toast.LENGTH_SHORT).show();
                   }
               }else {
+                  progressDialog.dismiss();
                   Toast.makeText(LoginWithOTP.this, "Enter your mobile number ", Toast.LENGTH_SHORT).show();
               }
             }
@@ -77,7 +79,7 @@ public class LoginWithOTP extends AppCompatActivity {
 
             @Override
             public void onVerificationFailed(FirebaseException e) {
-
+                Toast.makeText(LoginWithOTP.this, e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -90,6 +92,8 @@ public class LoginWithOTP extends AppCompatActivity {
                 startActivity(intent);
             }
         };
+
+
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(auth)
                         .setPhoneNumber("+91"+binding.inputMobileNumber.getText().toString().trim())       // Phone number to verify

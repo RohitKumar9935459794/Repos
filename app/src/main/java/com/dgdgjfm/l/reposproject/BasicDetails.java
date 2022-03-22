@@ -43,26 +43,39 @@ public class BasicDetails extends AppCompatActivity {
         progressDialog.setTitle("You are singUp");
         progressDialog.setMessage("We are sending OTP");
 
+
+       /* binding.loginText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BasicDetails.this,LoginActivity.class));
+            }
+        });*/
+
         binding.buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 progressDialog.show();
-                if(binding.phone.getText().toString().trim().isEmpty()|| binding.fullName.toString().trim().isEmpty()){
+                if (!binding.phone.getText().toString().trim().isEmpty()) {
+                    if ((binding.phone.getText().toString().trim()).length()==10){
+                        progressDialog.dismiss();
+                        sendOtp();
+                        Intent intent= new Intent(BasicDetails.this,Otp_for_signin.class);
+                        intent.putExtra("phone",binding.phone.getText().toString().trim());
+                        startActivity(intent);
+                    }else{
+                        progressDialog.dismiss();
+                        Toast.makeText(BasicDetails.this, "Please enter correct number", Toast.LENGTH_SHORT).show();
+                    }
+                }else {
                     progressDialog.dismiss();
-                    Toast.makeText(BasicDetails.this, " please enter details", Toast.LENGTH_SHORT).show();
-                }else if(binding.phone.getText().toString().trim().length()!=10){
-                    progressDialog.dismiss();
-                    Toast.makeText(BasicDetails.this, "Please enter Correct number", Toast.LENGTH_SHORT).show();
-                } else {
-                    otpSend();
-                    progressDialog.dismiss();
-
-
+                    Toast.makeText(BasicDetails.this, "Enter your mobile number ", Toast.LENGTH_SHORT).show();
                 }
             }
+        });
+    }
 
           
-            private void otpSend() {
+            private void sendOtp() {
 
                 mCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
 
@@ -103,15 +116,11 @@ public class BasicDetails extends AppCompatActivity {
                                 .build();
                 PhoneAuthProvider.verifyPhoneNumber(options);
             }
-        });
 
-        binding.loginText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(BasicDetails.this,LoginActivity.class));
-            }
-        });
-    }
+
+
+
+
 
 
 }

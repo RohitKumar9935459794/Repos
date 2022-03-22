@@ -46,6 +46,7 @@ public class OTP_Activity extends AppCompatActivity {
 
 
           editTextInput();
+          autoOtpReceiver();
         binding.enterMobileForOtp.setText(String.format(
                 "+91-%s",getIntent().getStringExtra("phone")
         ));

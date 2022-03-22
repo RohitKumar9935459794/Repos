@@ -1,8 +1,5 @@
 package com.dgdgjfm.l.reposproject;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
@@ -10,6 +7,9 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.dgdgjfm.l.reposproject.adapter.OtpReciver;
 import com.dgdgjfm.l.reposproject.databinding.ActivityOtpForSigninBinding;
@@ -29,6 +29,7 @@ import java.util.concurrent.TimeUnit;
 public class Otp_for_signin extends AppCompatActivity {
       ActivityOtpForSigninBinding binding;
        private String  verificationId;
+    String phoneNumber;
        private OtpReciver otpReciver;
 
     FirebaseAuth auth;
@@ -41,8 +42,12 @@ public class Otp_for_signin extends AppCompatActivity {
         setContentView(binding.getRoot());
         getSupportActionBar().hide();
 
+        phoneNumber=getIntent().getStringExtra("phone").toString();
 
-          editTextInput();
+
+
+        editTextInput();
+        autoOtpReceiver();
         binding.editTextTextPersonName2.setText(String.format(
           "+91-%s",getIntent().getStringExtra("phone")
         ));
