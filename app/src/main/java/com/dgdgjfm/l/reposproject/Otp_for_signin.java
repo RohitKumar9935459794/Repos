@@ -68,14 +68,18 @@ public class Otp_for_signin extends AppCompatActivity {
                 if(binding.otp12.getText().toString().trim().isEmpty()||
                         binding.otp22.getText().toString().trim().isEmpty()||
                         binding.otp32.getText().toString().trim().isEmpty()||
-                        binding.otp42.getText().toString().trim().isEmpty()){
+                        binding.otp42.getText().toString().trim().isEmpty()||
+                        binding.otp52.getText().toString().trim().isEmpty()||
+                        binding.otp62.getText().toString().trim().isEmpty()){
                     Toast.makeText(Otp_for_signin.this, "please enter otp", Toast.LENGTH_SHORT).show();
                 } else {
                     if(verificationId!=null){
                         String code= binding.otp12.getText().toString().trim()+
-                                binding.otp12.getText().toString().trim()+
-                                binding.otp12.getText().toString().trim()+
-                                binding.otp12.getText().toString().trim();
+                                binding.otp22.getText().toString().trim()+
+                                binding.otp32.getText().toString().trim()+
+                                binding.otp42.getText().toString().trim()+
+                        binding.otp52.getText().toString().trim()+
+                        binding.otp62.getText().toString().trim();
 
                         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
 
@@ -148,7 +152,7 @@ public class Otp_for_signin extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
 
             }
-        }); binding.otp12.addTextChangedListener(new TextWatcher() {
+        }); binding.otp42.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -156,7 +160,22 @@ public class Otp_for_signin extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                binding.otp22.requestFocus();
+                binding.otp52.requestFocus();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });binding.otp52.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                binding.otp62.requestFocus();
             }
 
             @Override
@@ -176,11 +195,15 @@ public class Otp_for_signin extends AppCompatActivity {
                 int o2= Character.getNumericValue(otp.charAt(1));
                 int o3= Character.getNumericValue(otp.charAt(2));
                 int o4= Character.getNumericValue(otp.charAt(3));
+                int o5= Character.getNumericValue(otp.charAt(4));
+                int o6= Character.getNumericValue(otp.charAt(5));
 
                 binding.otp12.setText(String.valueOf(o1));
                 binding.otp22.setText(String.valueOf(o2));
                 binding.otp32.setText(String.valueOf(o3));
                 binding.otp42.setText(String.valueOf(o4));
+                binding.otp52.setText(String.valueOf(o5));
+                binding.otp62.setText(String.valueOf(o6));
             }
 
             @Override

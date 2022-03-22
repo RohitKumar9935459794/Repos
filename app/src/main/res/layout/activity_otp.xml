@@ -89,6 +89,32 @@
             tools:ignore="SpeakableTextPresentCheck"
             android:maxLength="1"
             android:textColor="@color/black"/>
+
+
+        <EditText
+            android:id="@+id/otp5"
+            android:layout_width="40dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:maxLength="1"
+            android:textColor="@color/black"/>
+
+
+        <EditText
+            android:id="@+id/otp6"
+            android:layout_width="40dp"
+            android:layout_height="49dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number"
+            tools:ignore="SpeakableTextPresentCheck"
+            android:maxLength="1"
+            android:textColor="@color/black"/>
     </LinearLayout>
 
     <TextView

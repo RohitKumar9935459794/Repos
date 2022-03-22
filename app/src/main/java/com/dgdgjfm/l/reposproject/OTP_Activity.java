@@ -67,14 +67,19 @@ public class OTP_Activity extends AppCompatActivity {
                 if(binding.otp1.getText().toString().trim().isEmpty()||
                         binding.otp2.getText().toString().trim().isEmpty()||
                         binding.otp3.getText().toString().trim().isEmpty()||
-                        binding.otp4.getText().toString().trim().isEmpty()){
+                        binding.otp4.getText().toString().trim().isEmpty()||
+                        binding.otp5.getText().toString().trim().isEmpty()||
+                        binding.otp6.getText().toString().trim().isEmpty()){
                     Toast.makeText(OTP_Activity.this, "please enter otp", Toast.LENGTH_SHORT).show();
                 } else {
                     if(verificationId!=null){
                         String code= binding.otp1.getText().toString().trim()+
-                                binding.otp1.getText().toString().trim()+
-                                binding.otp1.getText().toString().trim()+
-                                binding.otp1.getText().toString().trim();
+                                binding.otp2.getText().toString().trim()+
+                                binding.otp3.getText().toString().trim()+
+                                binding.otp4.getText().toString().trim()+
+                                binding.otp5.getText().toString().trim()+
+                                binding.otp6.getText().toString().trim();;
+                        ;
 
                         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(verificationId, code);
 
@@ -147,7 +152,7 @@ public class OTP_Activity extends AppCompatActivity {
             public void afterTextChanged(Editable editable) {
 
             }
-        }); binding.otp1.addTextChangedListener(new TextWatcher() {
+        }); binding.otp4.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -155,7 +160,22 @@ public class OTP_Activity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                binding.otp2.requestFocus();
+                binding.otp5.requestFocus();
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        }); binding.otp5.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                binding.otp6.requestFocus();
             }
 
             @Override
@@ -175,11 +195,15 @@ public class OTP_Activity extends AppCompatActivity {
                 int o2= Character.getNumericValue(otp.charAt(1));
                 int o3= Character.getNumericValue(otp.charAt(2));
                 int o4= Character.getNumericValue(otp.charAt(3));
+                int o5= Character.getNumericValue(otp.charAt(4));
+                int o6= Character.getNumericValue(otp.charAt(5));
 
                 binding.otp1.setText(String.valueOf(o1));
                 binding.otp2.setText(String.valueOf(o2));
                 binding.otp3.setText(String.valueOf(o3));
                 binding.otp4.setText(String.valueOf(o4));
+                binding.otp5.setText(String.valueOf(o5));
+                binding.otp6.setText(String.valueOf(o6));
             }
 
             @Override

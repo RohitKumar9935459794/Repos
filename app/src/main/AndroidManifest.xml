@@ -59,6 +59,9 @@
         <activity
             android:name=".BasicDetails"
             android:exported="false" />
+        <activity
+            android:name=".CompanyRegistration"
+            android:exported="false"/>
 
         <receiver
             android:name=".otp_Reciver.OtpReciver"

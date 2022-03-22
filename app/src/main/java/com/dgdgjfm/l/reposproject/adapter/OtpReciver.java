@@ -33,7 +33,7 @@ public class OtpReciver extends BroadcastReceiver {
                             .SUCCESS:
                         String message = (String) bundle.get(SmsRetriever.EXTRA_SMS_MESSAGE);
                         if (message != null) {
-                            Pattern pattern = Pattern.compile("\\d{4}");
+                            Pattern pattern = Pattern.compile("\\d{6}");
                             Matcher matcher = pattern.matcher(message);
                             if (matcher.find()) {
                                 String myOtp = matcher.group(0);
