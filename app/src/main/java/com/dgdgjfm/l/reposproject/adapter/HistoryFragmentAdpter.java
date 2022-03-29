@@ -12,6 +12,7 @@ public class HistoryFragmentAdpter  extends FragmentStateAdapter {
 
     private String[] titles= new String[]{"Current order,Past order"};
 
+
     public HistoryFragmentAdpter(@NonNull HistoryFragment fragmentActivity) {
         super(fragmentActivity);
     }
@@ -19,11 +20,14 @@ public class HistoryFragmentAdpter  extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-       switch (position){
-           case 0:return new CurrentOrdersFragment();
-           case 1: return new PastOrdersFragment();
-       }
-       return new CurrentOrdersFragment();
+     switch (position){
+         case 0:
+             return new CurrentOrdersFragment();
+         case 1:
+             return  new PastOrdersFragment();
+
+     }
+     return new CurrentOrdersFragment();
     }
 
     @Override
