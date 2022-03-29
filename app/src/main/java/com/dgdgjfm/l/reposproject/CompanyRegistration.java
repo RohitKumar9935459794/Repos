@@ -35,7 +35,7 @@ public class CompanyRegistration extends AppCompatActivity {
                         binding.industryType.getText().toString());
 
               //  reference.setValue(users);
-                database.getReference("CompanyDetails"). child(Id).child(users.getEmail()).setValue(Id+users);
+                database.getReference("CompanyDetails").child(users.getEmail()).setValue(Id+users);
                 Intent intent= new Intent(CompanyRegistration.this,MainActivity.class);
                 intent.putExtra("UserId",Id);
                startActivity(intent);

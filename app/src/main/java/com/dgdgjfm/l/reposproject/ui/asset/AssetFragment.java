@@ -38,7 +38,7 @@ public class AssetFragment extends Fragment {
 
              // this changes the fragment design
                     FragmentTransaction fragmentTransaction=getChildFragmentManager().beginTransaction();
-                    fragmentTransaction.replace(R.id.assetFragment, change_fragement_asset);
+                    fragmentTransaction.add(R.id.assetFragment, change_fragement_asset);
                     fragmentTransaction.commit();
         });
 

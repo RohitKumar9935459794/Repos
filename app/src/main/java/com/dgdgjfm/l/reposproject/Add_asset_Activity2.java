@@ -16,7 +16,7 @@ public class Add_asset_Activity2 extends AppCompatActivity {
      ActivityAddAsset2Binding binding;
      FirebaseDatabase database;
      private String location;
-     private String Card;
+
     private String Id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +26,17 @@ public class Add_asset_Activity2 extends AppCompatActivity {
         getSupportActionBar().hide();
         database=FirebaseDatabase.getInstance();
         Id=getIntent().getStringExtra("ID") ;
-
+        location= getIntent().getStringExtra("location");
         binding.buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Add_Asset add_asset= new Add_Asset(binding.assetCapacity.getText().toString(),binding.assetName.getText().toString()) ;
-                  database.getReference("Asset").setValue(add_asset);
+                  database.getReference("Asset").child("Added Asset").setValue(add_asset+location+Id);
+
+                Toast.makeText(Add_asset_Activity2.this, "Asset add successfully", Toast.LENGTH_SHORT).show();
+
+                finish();
             }
         });
 
@@ -84,13 +88,14 @@ public class Add_asset_Activity2 extends AppCompatActivity {
         binding.djCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                
+                binding.assetName.setText("Dj_Set");
                 Toast.makeText(Add_asset_Activity2.this, "You selected Dj set", Toast.LENGTH_SHORT).show();
             }
         });
         binding.industryCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                binding.assetName.setText("Industry");
                 Toast.makeText(Add_asset_Activity2.this, "You selected Industry", Toast.LENGTH_SHORT).show();
             }
         });
@@ -98,6 +103,7 @@ public class Add_asset_Activity2 extends AppCompatActivity {
         binding.infraCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                binding.assetName.setText("Infrastructure");
                 Toast.makeText(Add_asset_Activity2.this, "You selected Inftra structure", Toast.LENGTH_SHORT).show();
             }
         });
@@ -105,6 +111,7 @@ public class Add_asset_Activity2 extends AppCompatActivity {
         binding.heavyCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                binding.assetName.setText("Heavy Vachel");
                 Toast.makeText(Add_asset_Activity2.this, "You selected Heavy vechail", Toast.LENGTH_SHORT).show();
             }
         });

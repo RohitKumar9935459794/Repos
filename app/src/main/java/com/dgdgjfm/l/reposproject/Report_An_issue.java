@@ -2,6 +2,7 @@ package com.dgdgjfm.l.reposproject;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,8 +28,9 @@ public class Report_An_issue extends AppCompatActivity {
             public void onClick(View view) {
 
                 Report_model reportModel = new Report_model(binding.reportModel.getText().toString());
-                database.getReference("Report_model An Issue").child(Id).setValue(Id+ reportModel);
+                database.getReference("Report_model An Issue").setValue(Id+ reportModel);
 
+                Toast.makeText(Report_An_issue.this, "Send Successfully", Toast.LENGTH_SHORT).show();
             }
         });
     }
